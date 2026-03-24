@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Animated Background Shapes -->
+    <div class="bg-shape bg-shape-1"></div>
+    <div class="bg-shape bg-shape-2"></div>
+    <div class="bg-shape bg-shape-3"></div>
+
     <div class="container">
         <!-- Sidebar Profile Card -->
         <aside class="sidebar-profile">
@@ -398,66 +403,41 @@
                     </h2>
                 </div>
 
-                <div class="contact-grid">
-                    <div class="contact-left">
-                        <p style="color: var(--text-muted); margin-bottom: 2rem; font-size: 0.95rem; line-height: 1.6;">
-                            I'm actively looking for new opportunities. Whether you have a question, a project idea, or just want to say hi — my inbox is always open!
-                        </p>
-                        
-                        <div class="contact-info-card">
-                            <div class="ci-icon" style="background-color: #e0e7ff; color: #4f46e5;"><i class="far fa-envelope"></i></div>
-                            <div class="ci-text">
-                                <p class="ci-label">Email</p>
-                                <a href="mailto:myaswanthkrishna9706@gmail.com" class="ci-value">myaswanthkrishna9706@gmail.com</a>
-                            </div>
+                <p style="text-align: center; color: var(--text-muted); margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    I'm actively looking for new opportunities. Whether you have a question, a project idea, or just want to say hi — my inbox is always open!
+                </p>
+                <div class="contact-container" style="max-width: 800px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                    <a href="mailto:myaswanthkrishna9706@gmail.com" class="contact-info-card glow-card">
+                        <div class="ci-icon" style="background-color: #e0e7ff; color: #4f46e5;"><i class="far fa-envelope"></i></div>
+                        <div class="ci-text">
+                            <p class="ci-label">Email</p>
+                            <span class="ci-value">myaswanthkrishna9706@gmail.com</span>
                         </div>
+                    </a>
 
-                        <div class="contact-info-card">
-                            <div class="ci-icon" style="background-color: #f3e8ff; color: #9333ea;"><i class="fas fa-phone-alt"></i></div>
-                            <div class="ci-text">
-                                <p class="ci-label">Phone</p>
-                                <a href="tel:+918885463528" class="ci-value">+91-8885463528</a>
-                            </div>
+                    <a href="tel:+918885463528" class="contact-info-card glow-card">
+                        <div class="ci-icon" style="background-color: #f3e8ff; color: #9333ea;"><i class="fas fa-phone-alt"></i></div>
+                        <div class="ci-text">
+                            <p class="ci-label">Phone</p>
+                            <span class="ci-value">+91-8885463528</span>
                         </div>
+                    </a>
 
-                        <div class="contact-info-card">
-                            <div class="ci-icon" style="background-color: #e0f2fe; color: #0ea5e9;"><i class="fab fa-linkedin-in"></i></div>
-                            <div class="ci-text">
-                                <p class="ci-label">LinkedIn</p>
-                                <a href="https://www.linkedin.com/in/m-yaswanth-krishna-7372b0298/" target="_blank" class="ci-value">linkedin.com/in/m-yaswanth-krishna-7372b0298</a>
-                            </div>
+                    <a href="https://www.linkedin.com/in/m-yaswanth-krishna-7372b0298/" target="_blank" class="contact-info-card glow-card">
+                        <div class="ci-icon" style="background-color: #e0f2fe; color: #0ea5e9;"><i class="fab fa-linkedin-in"></i></div>
+                        <div class="ci-text">
+                            <p class="ci-label">LinkedIn</p>
+                            <span class="ci-value">linkedin.com/in/m-yaswanth-krishna-7372b0298</span>
                         </div>
+                    </a>
 
-                        <div class="contact-info-card">
-                            <div class="ci-icon" style="background-color: #f1f5f9; color: #475569;"><i class="fab fa-github"></i></div>
-                            <div class="ci-text">
-                                <p class="ci-label">GitHub</p>
-                                <a href="https://github.com/Myaswanthkrishna" target="_blank" class="ci-value">github.com/Myaswanthkrishna</a>
-                            </div>
+                    <a href="https://github.com/Myaswanthkrishna" target="_blank" class="contact-info-card glow-card">
+                        <div class="ci-icon" style="background-color: #f1f5f9; color: #475569;"><i class="fab fa-github"></i></div>
+                        <div class="ci-text">
+                            <p class="ci-label">GitHub</p>
+                            <span class="ci-value">github.com/Myaswanthkrishna</span>
                         </div>
-                    </div>
-
-                    <div class="contact-right">
-                        <form class="contact-form" action="https://formsubmit.co/myaswanthkrishna9706@gmail.com" method="POST">
-                            <input type="hidden" name="_subject" value="New Portfolio Contact Message!">
-                            <input type="hidden" name="_captcha" value="false">
-                            <div class="form-group">
-                                <label for="name">Your Name</label>
-                                <input type="text" id="name" name="name" placeholder="John Doe" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Your Email</label>
-                                <input type="email" id="email" name="email" placeholder="john@example.com" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Message</label>
-                                <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
-                            </div>
-                            <button type="submit" class="btn-submit">
-                                <i class="far fa-paper-plane"></i> Send Message
-                            </button>
-                        </form>
-                    </div>
+                    </a>
                 </div>
             </section>
 
@@ -473,9 +453,7 @@
     <!-- Floating Action Button -->
     <a href="#" class="fab-scroll-top"><i class="fas fa-chevron-up"></i></a>
     
-    <footer class="app-footer">
-        <p>&copy; 2026 <span class="text-primary" style="font-weight: 600;">Artfolio</span>. All rights reserved.</p>
-    </footer>
+    
     <script src="script.js"></script>
 </body>
 </html>

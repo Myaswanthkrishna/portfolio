@@ -88,4 +88,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- Scroll Reveal Animations ---
+    const fadeElements = document.querySelectorAll('.content-card, .sidebar-profile');
+    const fadeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                // Uncomment the line below to only animate once
+                // fadeObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+
+    fadeElements.forEach(el => {
+        el.classList.add('fade-in');
+        fadeObserver.observe(el);
+    });
+
 });
