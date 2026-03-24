@@ -111,7 +111,7 @@
 }
 
 body {
-    background-color: var(--bg-body);
+    background-color: transparent;
     font-family: 'Inter', sans-serif;
     color: var(--text-dark);
     line-height: 1.6;
@@ -984,43 +984,16 @@ a {
     box-shadow: 0 0 30px 8px rgba(168, 85, 247, 0.9);
 }
 
-/* Animated Glassmorphism Blobs */
-.bg-shape {
+/* --- Starfield Canvas --- */
+#star-canvas {
     position: fixed;
-    border-radius: 50%;
-    filter: blur(140px);
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     z-index: -1;
-    opacity: 0.5;
-    animation: float 25s infinite alternate ease-in-out;
     pointer-events: none;
-}
-.bg-shape-1 {
-    width: 600px;
-    height: 600px;
-    background: rgba(139, 92, 246, 0.45);
-    top: -150px;
-    left: -150px;
-}
-.bg-shape-2 {
-    width: 500px;
-    height: 500px;
-    background: rgba(56, 189, 248, 0.35);
-    bottom: -150px;
-    right: -100px;
-    animation-delay: -5s;
-}
-.bg-shape-3 {
-    width: 400px;
-    height: 400px;
-    background: rgba(236, 72, 153, 0.35);
-    top: 50%;
-    left: 40%;
-    transform: translate(-50%, -50%);
-    animation-delay: -10s;
-}
-@keyframes float {
-    0% { transform: translate(0, 0) scale(1); }
-    100% { transform: translate(100px, 80px) scale(1.2); }
+    background-color: var(--bg-body);
 }
 
 /* Scroll Reveal Animations */

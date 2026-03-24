@@ -121,4 +121,66 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // --- Starfield Background ---
+    const canvas = document.getElementById('star-canvas');
+    if (canvas) {
+        const ctx = canvas.getContext('2d');
+        let width, height, stars;
+        
+        function initStars() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+            stars = [];
+            const numStars = Math.floor((width * height) / 4000); 
+            for (let i = 0; i < numStars; i++) {
+                stars.push(new Star());
+            }
+        }
+
+        class Star {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.size = Math.random() * 2.5 + 0.5;
+                this.speed = Math.random() * 0.4 + 0.1;
+                this.alpha = Math.random();
+                this.alphaChange = (Math.random() * 0.02 + 0.005) * (Math.random() > 0.5 ? 1 : -1);
+            }
+            update() {
+                this.y -= this.speed;
+                if (this.y < 0) {
+                    this.y = height;
+                    this.x = Math.random() * width;
+                }
+                this.alpha += this.alphaChange;
+                if (this.alpha <= 0.1 || this.alpha >= 0.8) {
+                    this.alphaChange = -this.alphaChange;
+                }
+            }
+            draw(isDark) {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = isDark 
+                    ? `rgba(255, 255, 255, ${this.alpha})` 
+                    : `rgba(99, 102, 241, ${this.alpha})`;
+                ctx.fill();
+            }
+        }
+
+        function animateStars() {
+            ctx.clearRect(0, 0, width, height);
+            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            stars.forEach(star => {
+                star.update();
+                star.draw(isDark);
+            });
+            requestAnimationFrame(animateStars);
+        }
+
+        initStars();
+        animateStars();
+        
+        window.addEventListener('resize', initStars);
+    }
 });
